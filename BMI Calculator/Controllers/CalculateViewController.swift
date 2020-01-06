@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculateViewController: UIViewController {
     
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     @IBAction func onCalculatePressed(_ sender: UIButton) {
         let ibm = weightSlider.value / (heightSlider.value*heightSlider.value)
         print(String(format: "%.2f", ibm))
+        
+        self.performSegue(withIdentifier: "goToResult", sender: self)
     }
 }
 
