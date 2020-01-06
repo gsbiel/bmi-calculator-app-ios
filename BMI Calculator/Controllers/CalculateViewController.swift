@@ -45,10 +45,10 @@ class CalculateViewController: UIViewController {
         if segue.identifier == "goToResult" {
             // segue.destination e do tipo UIViewController. Esse tipo nao possui o atributo bmiValue. Quem possui e o tipo ResultViewController (um filho de UIViewController). Para que a linha destinationVC.bmiValue seja reconhecida, voce tem que especificara segue.destination como sendo do tipo ResultViewController.
             let destinationVC = segue.destination as! ResultViewController
-    
             destinationVC.bmiValue = String(format: "%.2f",calculatorBrain.getBMIValue())
+            destinationVC.advice = calculatorBrain.getAdvice()
+            destinationVC.color = calculatorBrain.getColor()
         }
     }
-
 }
 
